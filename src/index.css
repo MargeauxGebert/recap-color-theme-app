@@ -1,0 +1,19 @@
+@import url(./components/ColorCard/ColorCard.css);
+@import url(./App.css);
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Variables */
+  --surface: #f5f5f5;
+  --shadow: #e3e3e3;
+  --secondary: #f5eedd;
+}
+
+body {
+  font-family: system-ui;
+  background-color: var(--surface);
+  margin: 0;
+  padding: 0;
+}
