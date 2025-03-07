@@ -1,10 +1,11 @@
 import { themes } from "../../db.js";
 import { ColorCard } from "../ColorCard/ColorCard.jsx";
+import { ColorCardPreview } from "../ColorCardPreview/ColorCardPreview.jsx";
 
 export function ColorCardSection({ title }) {
   return (
-    <article className="color-card">
-      <h2 className="color-card__title">{title}</h2>
+    <article className="color-card__section">
+      <h2 className="color-card__section-title">{title}</h2>
       {themes[0].colors.map((colors) => (
         <ColorCard
           value={colors.value}
@@ -12,7 +13,11 @@ export function ColorCardSection({ title }) {
             colors.role //.charAt(0).toUpperCase() + colors.role.slice(1)
           }
         />
+
       ))}
+        {themes[1].colors.map((colors) => (
+          <ColorCardPreview value={colors.value} />
+        ))}
     </article>
   );
 }

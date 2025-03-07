@@ -1,6 +1,6 @@
 export function ColorCard({ value, role }) {
   return (
-    <section className="color-card__section">
+    <section className="color-card">
       <label htmlFor="color-picker"></label>
       <input
         className="input-color"
