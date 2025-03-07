@@ -1,0 +1,42 @@
+
+.color-card__section {
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  box-shadow: 7px 7px 7px var(--shadow);
+}
+
+.input-color {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  width: 100%;
+  height: 210px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.color-card__info {
+  padding: 10px 10px;
+}
+h4 {
+    margin: 0;
+}
+
+.color-card__hex {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* input[type="text"] {
+  border: 1px solid var(--shadow);
+} */
+
+
+
