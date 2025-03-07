@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { ColorCard } from "./components/ColorCard/ColorCard";
 
 import "./App.css";
 
 function App() {
-  return;
+  return(
+  <ColorCard />
+  )
 }
 
 export default App;
