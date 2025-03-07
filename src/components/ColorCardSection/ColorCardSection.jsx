@@ -5,7 +5,10 @@ import { ColorCardPreview } from "../ColorCardPreview/ColorCardPreview.jsx";
 export function ColorCardSection({ title }) {
   return (
     <article className="color-card__section">
-      <h2 className="color-card__section-title">{title}</h2>
+      <div className="color-card__section-title">
+        <h2>{title}</h2>
+        
+      </div>
       {themes[0].colors.map((colors) => (
         <ColorCard
           value={colors.value}
@@ -13,11 +16,10 @@ export function ColorCardSection({ title }) {
             colors.role //.charAt(0).toUpperCase() + colors.role.slice(1)
           }
         />
-
       ))}
-        {themes[1].colors.map((colors) => (
-          <ColorCardPreview value={colors.value} />
-        ))}
+      {themes[1].colors.map((colors) => (
+        <ColorCardPreview value={colors.value} />
+      ))}
     </article>
   );
 }
