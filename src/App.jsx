@@ -10,8 +10,10 @@ function App() {
         <h1>Color Theme Creator</h1>
       </header>
       <main>
-        <ColorCardSection title={themes[0].name} />
-        <ColorCardSection title={themes[0].name} />
+        {themes.map(theme => 
+          <ColorCardSection key={theme.id} title={theme.name} colors={theme.colors} />
+        )}
+      
       
       </main>
     </>

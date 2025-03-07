@@ -9,6 +9,10 @@
 }
 
 .color-card__section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #ffffff;
   padding: 15px;
   width: 100%;
