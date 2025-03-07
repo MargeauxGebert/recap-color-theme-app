@@ -1,0 +1,10 @@
+.color-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  
+  .color-card__title {
+    margin: 0;
+  }

@@ -1,13 +1,4 @@
-.color-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 2rem;
-}
 
-.color-card__title {
-  margin: 0;
-}
 .color-card__section {
   width: 300px;
   height: 300px;
@@ -32,9 +23,20 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .color-card__info {
-  padding-left: 1rem;
+  padding: 10px 10px;
+}
+h4 {
+    margin: 0;
 }
 
-input[type="text"] {
-  border: 1px solid var(--shadow);
+.color-card__hex {
+    font-size: 13px;
+    margin-top: 10px;
 }
+
+/* input[type="text"] {
+  border: 1px solid var(--shadow);
+} */
+
+
+

@@ -1,4 +1,5 @@
 @import url(./components/ColorCard/ColorCard.css);
+@import url(./components/ColorCardSection/ColorCardSection.css);
 @import url(./App.css);
 * {
   box-sizing: border-box;

@@ -1,15 +1,20 @@
-import { ColorCard } from "./components/ColorCard/ColorCard";
+
 import "./App.css";
+import { ColorCardSection } from "./components/ColorCardSection/ColorCardSection.jsx";
+import { themes } from "./db.js";
 
 function App() {
   return (
-    <main>
+    <>
       <header className="header">
         <h1>Color Theme Creator</h1>
       </header>
-
-      <ColorCard />
-    </main>
+      <main>
+     
+          <ColorCardSection title={themes[0].name}  />
+      
+      </main>
+    </>
   );
 }
 
