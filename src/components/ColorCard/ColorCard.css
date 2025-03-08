@@ -1,18 +1,10 @@
-
 .color-card {
   margin-bottom: 1rem;
   width: 300px;
   height: 300px;
-  background-color: #ffffff;
+  background-color: var(--white-background);
   box-shadow: 7px 7px 7px var(--shadow);
 }
-
-
-.color-card__color-preview {
-  width: 60px;
-  height: 60px;
-}
-
 
 .color-card__color {
   width: 100%;
@@ -39,17 +31,14 @@ input[type="color"]::-webkit-color-swatch {
   padding: 15px 15px;
 }
 h4 {
-    margin: 0;
+  margin: 0;
 }
 
 .color-card__hex {
-    font-size: 13px;
-    margin-top: 10px;
+  font-size: 13px;
+  margin-top: 10px;
 }
 
 /* input[type="text"] {
   border: 1px solid var(--shadow);
 } */
-
-
-

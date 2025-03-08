@@ -1,5 +1,6 @@
 @import url(./components/ColorCard/ColorCard.css);
 @import url(./components/ColorCardSection/ColorCardSection.css);
+@import url(./components/ColorCardPreview/ColorCardPreview.css);
 @import url(./App.css);
 * {
   box-sizing: border-box;
@@ -10,6 +11,7 @@
   --surface: #f5f5f5;
   --shadow: #e3e3e3;
   --secondary: #f5eedd;
+  --white-background: #ffffff;
 }
 
 body {
