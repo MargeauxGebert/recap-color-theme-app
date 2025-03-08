@@ -1,7 +1,23 @@
-.color-card__section{
-    padding-top: 2rem;
-  }
-  
-  .color-card__section-title {
-    margin: 0;
-  }
+.color-card__section {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.color-card__section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px;
+  width: 100%;
+}
+
+h2 {
+  margin: 0;
+}
