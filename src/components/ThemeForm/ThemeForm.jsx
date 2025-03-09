@@ -1,16 +1,40 @@
+import {v4 as uuid} from "uuid";
 export function ThemeForm({ onAddTheme }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     console.log(data);
+    const randomId = uuid();
     // const name = data.name;
     // const primary = data.primary;
     // const secondary = data.secondary;
     // const surface = data.surface;
     // const surfaceOn = data.surfaceon;
-    const newTheme =  
-    onAddTheme();
+    const newTheme =  {
+        id: `${randomId}`,
+        name: data.name,
+        colors: [
+            {
+                role: "primary",
+                value: data.primary,
+            },
+            {
+                role: "secondary",
+                value: data.secondary,
+            },
+            {
+                role: "surface",
+                value: data.surface,
+            },
+            {
+                role: "surface-on",
+                value: data.surfaceon,
+            }
+        ]
+    }
+    onAddTheme(newTheme);
+    event.target.reset();
   }
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -69,7 +93,7 @@ export function ThemeForm({ onAddTheme }) {
           <input
             type="color"
             id="color-surface-on"
-            name="surface-on"
+            name="surfaceon"
             defaultValue="#231F20"
           />
           <div className="form__color-input-info">
