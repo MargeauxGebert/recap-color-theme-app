@@ -11,6 +11,7 @@ function App() {
   function handleAddTheme(newTheme) {
     setThemes([newTheme, ...themes])
   }
+  
   return (
     <>
       <header className="header">

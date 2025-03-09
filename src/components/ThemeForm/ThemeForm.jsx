@@ -1,39 +1,35 @@
-import {v4 as uuid} from "uuid";
+import { v4 as uuid } from "uuid";
 export function ThemeForm({ onAddTheme }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
     const randomId = uuid();
-    // const name = data.name;
-    // const primary = data.primary;
-    // const secondary = data.secondary;
-    // const surface = data.surface;
-    // const surfaceOn = data.surfaceon;
-    const newTheme =  {
-        id: `${randomId}`,
-        name: data.name,
-        colors: [
-            {
-                role: "primary",
-                value: data.primary,
-            },
-            {
-                role: "secondary",
-                value: data.secondary,
-            },
-            {
-                role: "surface",
-                value: data.surface,
-            },
-            {
-                role: "surface-on",
-                value: data.surfaceon,
-            }
-        ]
-    }
+
+    const newTheme = {
+      id: `${randomId}`,
+      name: data.name,
+      colors: [
+        {
+          role: "primary",
+          value: data.primary,
+        },
+        {
+          role: "secondary",
+          value: data.secondary,
+        },
+        {
+          role: "surface",
+          value: data.surface,
+        },
+        {
+          role: "surface-on",
+          value: data.surfaceon,
+        },
+      ],
+    };
     onAddTheme(newTheme);
+    console.log(newTheme);
     event.target.reset();
   }
   return (
@@ -42,7 +38,13 @@ export function ThemeForm({ onAddTheme }) {
         <h2>Add a Theme</h2>
       </div>
       <label htmlFor="theme-name"></label>
-      <input type="text" name="name" id="theme-name" placeholder="Name" required />
+      <input
+        type="text"
+        name="name"
+        id="theme-name"
+        placeholder="Name"
+        required
+      />
       <div className="form__color-section">
         <div className="form__color-input">
           <label htmlFor="color-primary"></label>
