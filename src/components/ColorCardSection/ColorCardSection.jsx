@@ -3,7 +3,7 @@ import { ColorCard } from "../ColorCard/ColorCard.jsx";
 import { ColorCardPreview } from "../ColorCardPreview/ColorCardPreview.jsx";
 import { useState } from "react";
 
-export function ColorCardSection({ title, colors, id, onDeleteTheme}) {
+export function ColorCardSection({ title, colors, id, onDeleteTheme }) {
   const [showDetails, setShowDetails] = useState(false);
   const [toggleArrow, setToggleArrow] = useState(<IconCaretDownFilled />);
   const cardPreview = colors.map((color) => (
@@ -28,7 +28,7 @@ export function ColorCardSection({ title, colors, id, onDeleteTheme}) {
         <h2>{title}</h2>
         {toggleArrow}
       </div>
-      {showDetails ? deleteButton : "" }
+      {showDetails ? deleteButton : ""}
       {showDetails ? cardDetails : cardPreview}
     </article>
   );
