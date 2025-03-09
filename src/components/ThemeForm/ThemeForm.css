@@ -5,6 +5,16 @@
   gap: 15px;
   margin-bottom: 20px;
 }
+
+.form__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-background);
+  padding: 15px;
+  width: 100%;
+}
 .form__color-section {
   display: flex;
   flex-direction: row;
@@ -24,7 +34,7 @@
 }
 
 .form__color-input-info p {
-    font-weight: 600;
+  font-weight: 600;
   margin: 0;
 }
 
