@@ -21,3 +21,12 @@
 h2 {
   margin: 0;
 }
+
+.delete-button {
+  background-color: #ff006e;
+  border: 1px solid var(--shadow);
+  height: 2rem;
+  width: 100%;
+  border-radius: 10px;
+  color: var(--white-background);
+}

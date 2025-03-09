@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 300px;
   gap: 15px;
+  margin-bottom: 20px;
 }
 .form__color-section {
   display: flex;
@@ -56,4 +57,5 @@ input[type="text"] {
   background-color: var(--white-background);
   border: 1px solid var(--shadow);
   height: 2rem;
+  border-radius: 10px;
 }

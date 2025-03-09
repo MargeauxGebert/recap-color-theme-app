@@ -13,6 +13,7 @@ function App() {
   function handleDeleteTheme(id) {
     const updatedThemes = themes.filter((theme) => theme.id !== id);
     setThemes(updatedThemes);
+    console.log(updatedThemes);
   }
 
   return (
@@ -22,14 +23,19 @@ function App() {
       </header>
       <main>
         <ThemeForm onAddTheme={handleAddTheme} />
-        {themes.map((theme) => (
-          <ColorCardSection onDeleteTheme={handleDeleteTheme}
-            key={theme.id}
-            title={theme.name}
-            colors={theme.colors}
-          />
-        ))}
+       
+          {themes.map((theme) => (
+            <article key={theme.id} className="color-card__section">
+              <ColorCardSection
+                onDeleteTheme={() => handleDeleteTheme(theme.id)}
+                title={theme.name}
+                colors={theme.colors}
+              />
+            </article>
+          ))}
+        
       </main>
+      {console.log(themes)}
     </>
   );
 }
