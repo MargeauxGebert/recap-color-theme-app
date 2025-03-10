@@ -26,7 +26,7 @@ export function ColorCard({ value, role }) {
       <div className="color-card__info">
         <h4>{role}</h4>
         <p className="color-card__color-name"> {colorName} </p>
-        <p className="color-card__hex">{value.toUpperCase()}</p>
+        <p className="color-card__hex">{value}</p>
       </div>
     </section>
   );

@@ -10,9 +10,7 @@ const displayState = {
   edit: "edit",
 };
 
-export function ColorCardSection({ theme, onDeleteTheme }) {
-  const [showDetails, setShowDetails] = useState(false);
-  const [toggleArrow, setToggleArrow] = useState(<IconCaretDownFilled />);
+export function ColorCardSection({ theme, onDeleteTheme, onEditTheme }) {
   const cardPreview = theme.colors.map((color) => (
     <ColorCardPreview key={color.value} role={color.role} value={color.value} />
   ));
@@ -21,16 +19,6 @@ export function ColorCardSection({ theme, onDeleteTheme }) {
   ));
 
   const [display, setDisplay] = useState(displayState.preview);
-
-  // function handleToggle() {
-  //   if (showDetails === false) {
-  //     setShowDetails(true);
-  //     setToggleArrow(<IconCaretUpFilled />);
-  //   } else {
-  //     setShowDetails(!showDetails);
-  //     setToggleArrow(<IconCaretDownFilled />);
-  //   }
-  // }
 
   return (
     <>
@@ -67,18 +55,13 @@ export function ColorCardSection({ theme, onDeleteTheme }) {
           {cardDetails}
         </>
       )}
-      {display === displayState.edit && <EditForm />}
-      {/* {showDetails ? (
-        <>
-          {cardDetails}
-          <button className="edit-button">Edit</button>
-          <button className="delete-button" onClick={onDeleteTheme}>
-            Delete
-          </button>
-        </>
-      ) : (
-        cardPreview
-      )} */}
+      {display === displayState.edit && (
+        <EditForm
+          theme={theme}
+          onEditTheme={onEditTheme}
+          setDisplay={setDisplay}
+        />
+      )}
     </>
   );
 }

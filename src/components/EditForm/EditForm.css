@@ -30,6 +30,7 @@
 .edit-form__colors [type="color"] {
     width: 65px;
     height: 65px;
+    box-shadow: var(--box-shadow);
 }
 
 .save-button {

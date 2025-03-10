@@ -18,6 +18,16 @@ function App() {
     setThemes(updatedThemes);
   }
 
+  function handleEditTheme(modifiedTheme) {
+    const modifiedElement = themes.map((theme) => {
+      if (theme.id !== modifiedTheme.id) {
+        return theme;
+      }
+      return modifiedTheme;
+    });
+    setThemes(modifiedElement);
+  }
+
   return (
     <>
       <header className="header">
@@ -25,12 +35,12 @@ function App() {
       </header>
       <main>
         <ThemeForm onAddTheme={handleAddTheme} />
-        <EditForm />
         {themes.map((theme) => (
           <section key={theme.id} className="color-card__section">
             <ColorCardSection
+              onEditTheme={handleEditTheme}
               onDeleteTheme={() => handleDeleteTheme(theme.id)}
-             theme={theme}
+              theme={theme}
             />
           </section>
         ))}
