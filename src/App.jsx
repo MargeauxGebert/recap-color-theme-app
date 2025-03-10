@@ -1,5 +1,6 @@
 import "./App.css";
 import { ColorCardSection } from "./components/ColorCardSection/ColorCardSection.jsx";
+import { EditForm } from "./components/EditForm/EditForm.jsx";
 import { ThemeForm } from "./components/ThemeForm/ThemeForm.jsx";
 import { initialThemes } from "./db.js";
 import useLocalStorageState from "use-local-storage-state";
@@ -24,6 +25,7 @@ function App() {
       </header>
       <main>
         <ThemeForm onAddTheme={handleAddTheme} />
+        <EditForm />
         {themes.map((theme) => (
           <article key={theme.id} className="color-card__section">
             <ColorCardSection

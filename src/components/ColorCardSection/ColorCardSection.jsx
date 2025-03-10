@@ -3,7 +3,6 @@ import { ColorCard } from "../ColorCard/ColorCard.jsx";
 import { ColorCardPreview } from "../ColorCardPreview/ColorCardPreview.jsx";
 import { useState } from "react";
 
-
 export function ColorCardSection({ title, colors, onDeleteTheme }) {
   const [showDetails, setShowDetails] = useState(false);
   const [toggleArrow, setToggleArrow] = useState(<IconCaretDownFilled />);
