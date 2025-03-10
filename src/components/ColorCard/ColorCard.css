@@ -17,9 +17,15 @@
 h4 {
   margin: 0;
 }
-
+.color-card__color-name {
+  font-size: 13px;
+  margin: 0;
+  margin-top: 8px;
+}
 .color-card__hex {
   font-size: 13px;
-  margin-top: 10px;
+  margin: 0;
+  margin-top: 3px;
+  
 }
 

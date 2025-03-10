@@ -1,11 +1,13 @@
-import { useState } from "react";
 import "./App.css";
 import { ColorCardSection } from "./components/ColorCardSection/ColorCardSection.jsx";
 import { ThemeForm } from "./components/ThemeForm/ThemeForm.jsx";
 import { initialThemes } from "./db.js";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [themes, setThemes] = useState(initialThemes);
+  const [themes, setThemes] = useLocalStorageState("themes", {
+    defaultValue: initialThemes,
+  });
 
   function handleAddTheme(newTheme) {
     setThemes([newTheme, ...themes]);
@@ -22,19 +24,15 @@ function App() {
       </header>
       <main>
         <ThemeForm onAddTheme={handleAddTheme} />
-       
-
-          {themes.map((theme) => (
-            <article key={theme.id} className="color-card__section">
-              <ColorCardSection
-                onDeleteTheme={() => handleDeleteTheme(theme.id)}
-                title={theme.name}
-                colors={theme.colors}
-                />
-            </article>
-          ))}
-   
-        
+        {themes.map((theme) => (
+          <article key={theme.id} className="color-card__section">
+            <ColorCardSection
+              onDeleteTheme={() => handleDeleteTheme(theme.id)}
+              title={theme.name}
+              colors={theme.colors}
+            />
+          </article>
+        ))}
       </main>
     </>
   );
