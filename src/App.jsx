@@ -27,13 +27,12 @@ function App() {
         <ThemeForm onAddTheme={handleAddTheme} />
         <EditForm />
         {themes.map((theme) => (
-          <article key={theme.id} className="color-card__section">
+          <section key={theme.id} className="color-card__section">
             <ColorCardSection
               onDeleteTheme={() => handleDeleteTheme(theme.id)}
-              title={theme.name}
-              colors={theme.colors}
+             theme={theme}
             />
-          </article>
+          </section>
         ))}
       </main>
     </>

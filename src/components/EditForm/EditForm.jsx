@@ -3,13 +3,13 @@ export function EditForm() {
     <form className="edit-form">
       <h3 className="edit-form__title">Edit Form</h3>
       <label htmlFor="edit-name"></label>
-      <input type="text" id="edit-name" defaultValue={name} />
+      <input type="text" id="edit-name"  />
       <div className="edit-form__colors">
         <label htmlFor="edit-color"></label>
         <input type="color" id="edit-color" />
 
         <label htmlFor="edit-color"></label>
-        <input type="color" id="edit-color" />
+        <input type="color" id="edit-color"  />
 
         <label htmlFor="edit-color"></label>
         <input type="color" id="edit-color" />
