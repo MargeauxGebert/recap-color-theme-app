@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 export function ColorCard({ value, role }) {
   const [colorName, setColorName] = useState("");
   
-  console.log(colorName);
   useEffect(() => {
     const hexValue = value.slice(1);
     async function getColorNames() {
@@ -18,7 +17,6 @@ export function ColorCard({ value, role }) {
     getColorNames();
   }, [value]);
 
-console.log(colorName);
   return (
     <section className="color-card">
       <div
@@ -28,7 +26,7 @@ console.log(colorName);
       <div className="color-card__info">
         <h4>{role}</h4>
         <p className="color-card__color-name"> {colorName} </p>
-        <p className="color-card__hex">{value.toUpperCase()}</p>
+        <p className="color-card__hex">{value}</p>
       </div>
     </section>
   );

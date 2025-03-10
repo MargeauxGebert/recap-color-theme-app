@@ -2,6 +2,7 @@
 @import url(./components/ColorCardSection/ColorCardSection.css);
 @import url(./components/ColorCardPreview/ColorCardPreview.css);
 @import url(./components/ThemeForm/ThemeForm.css);
+@import url(./components/EditForm/EditForm.css);
 @import url(./App.css);
 * {
   box-sizing: border-box;

@@ -1,0 +1,44 @@
+.edit-form {
+    display: flex;
+    flex-flow: row wrap;
+    width: 300px;
+    gap: 10px;
+    justify-content: center;
+}
+
+.edit-form__title {
+    width: 100%;
+    background-color: var(--secondary);
+    color: var(--white-background);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0;
+}
+
+.edit-form__colors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.edit-form [type="text"] {
+    width: 100%;
+}
+
+.edit-form__colors [type="color"] {
+    width: 65px;
+    height: 65px;
+    box-shadow: var(--box-shadow);
+}
+
+.save-button {
+    background-color: #76c893;
+    border: 1px solid var(--shadow);
+    height: 2rem;
+    width: 80%;
+    border-radius: 10px;
+    color: var(--white-background);
+    font-weight: 550;
+}

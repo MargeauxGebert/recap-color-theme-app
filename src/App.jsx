@@ -1,5 +1,6 @@
 import "./App.css";
 import { ColorCardSection } from "./components/ColorCardSection/ColorCardSection.jsx";
+import { EditForm } from "./components/EditForm/EditForm.jsx";
 import { ThemeForm } from "./components/ThemeForm/ThemeForm.jsx";
 import { initialThemes } from "./db.js";
 import useLocalStorageState from "use-local-storage-state";
@@ -17,6 +18,16 @@ function App() {
     setThemes(updatedThemes);
   }
 
+  function handleEditTheme(modifiedTheme) {
+    const modifiedElement = themes.map((theme) => {
+      if (theme.id !== modifiedTheme.id) {
+        return theme;
+      }
+      return modifiedTheme;
+    });
+    setThemes(modifiedElement);
+  }
+
   return (
     <>
       <header className="header">
@@ -25,13 +36,13 @@ function App() {
       <main>
         <ThemeForm onAddTheme={handleAddTheme} />
         {themes.map((theme) => (
-          <article key={theme.id} className="color-card__section">
+          <section key={theme.id} className="color-card__section">
             <ColorCardSection
+              onEditTheme={handleEditTheme}
               onDeleteTheme={() => handleDeleteTheme(theme.id)}
-              title={theme.name}
-              colors={theme.colors}
+              theme={theme}
             />
-          </article>
+          </section>
         ))}
       </main>
     </>

@@ -24,12 +24,11 @@ export function ThemeForm({ onAddTheme }) {
         },
         {
           role: "surface-on",
-          value: data.surfaceon,
+          value: data["surface-on"],
         },
       ],
     };
     onAddTheme(newTheme);
-    console.log(newTheme);
     event.target.reset();
   }
   return (
@@ -95,7 +94,7 @@ export function ThemeForm({ onAddTheme }) {
           <input
             type="color"
             id="color-surface-on"
-            name="surfaceon"
+            name="surface-on"
             defaultValue="#231F20"
           />
           <div className="form__color-input-info">
