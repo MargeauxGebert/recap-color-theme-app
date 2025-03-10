@@ -57,7 +57,7 @@ export function ThemeForm({ onAddTheme }) {
           <div className="form__color-input-info">
             <p>Primary</p>
             <label htmlFor="color-hex"></label>
-            <input type="text" id="color-hex" defaultValue="#7F95D1" />
+            <input type="text" id="color-hex" defaultValue={"#7F95D1"} />
           </div>
         </div>
         <div className="form__color-input">
