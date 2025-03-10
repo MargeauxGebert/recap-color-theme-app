@@ -31,6 +31,7 @@ export function ColorCardSection({ title, colors, onDeleteTheme }) {
       {showDetails ? (
         <>
           {cardDetails}
+          <button className="edit-button">Edit</button>
           <button className="delete-button" onClick={onDeleteTheme}>
             Delete
           </button>{" "}

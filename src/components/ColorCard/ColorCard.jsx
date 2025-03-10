@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 export function ColorCard({ value, role }) {
   const [colorName, setColorName] = useState("");
-  
-  console.log(colorName);
+
   useEffect(() => {
     const hexValue = value.slice(1);
     async function getColorNames() {
@@ -13,12 +12,10 @@ export function ColorCard({ value, role }) {
       const colorNames = await response.json();
 
       setColorName(colorNames.name.value);
-
     }
     getColorNames();
   }, [value]);
 
-console.log(colorName);
   return (
     <section className="color-card">
       <div

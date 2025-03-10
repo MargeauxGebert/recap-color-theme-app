@@ -29,7 +29,6 @@ export function ThemeForm({ onAddTheme }) {
       ],
     };
     onAddTheme(newTheme);
-    console.log(newTheme);
     event.target.reset();
   }
   return (
