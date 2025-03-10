@@ -10,8 +10,8 @@
 :root {
   /* Color Variables */
   --surface: #f5f5f5;
-  --shadow: #e3e3e3;
-  --secondary: #f5eedd;
+  --shadow: #d1d1d1;
+  --secondary: #7161ef;
   --white-background: #ffffff;
   --box-shadow: 7px 7px 7px var(--shadow);
 }

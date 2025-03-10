@@ -34,7 +34,7 @@ export function ThemeForm({ onAddTheme }) {
   }
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <div className="color-card__section-title">
+      <div className="form__title">
         <h2>Add a Theme</h2>
       </div>
       <label htmlFor="theme-name"></label>

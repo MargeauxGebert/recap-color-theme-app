@@ -1,4 +1,5 @@
 .color-card__color-preview {
     width: 60px;
     height: 60px;
+    box-shadow: var(--box-shadow);
   }
