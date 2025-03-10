@@ -13,9 +13,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--white-background);
+  background-color: black;
   padding: 15px;
   width: 100%;
+  color: var(--white-background);
+  border-radius: 10px;
 }
 
 h2 {
