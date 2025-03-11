@@ -1,6 +1,34 @@
 import { v4 as uuid } from "uuid";
 import { ColorPicker } from "./ColorPicker";
+// import useLocalStorageState from "use-local-storage-state";
+
+const initialData = [
+  {
+    role: "primary",
+    value: "#7F95D1",
+  },
+  {
+    role: "secondary",
+    value: "#FF82A9",
+  },
+  {
+    role: "surface",
+    value: "#CEF9F2",
+  },
+  {
+    role: "surface-on",
+    value: "#231F20",
+  },
+];
+
+
 export function ThemeForm({ onAddTheme }) {
+  // const [initialColorValues, setInitialColorValues] = useLocalStorageState(
+  //   "initialColorValues",
+  //   { defaultValue: initialValue }
+  // );
+  
+
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -32,6 +60,7 @@ export function ThemeForm({ onAddTheme }) {
     onAddTheme(newTheme);
     event.target.reset();
   }
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="form__title">
@@ -46,8 +75,11 @@ export function ThemeForm({ onAddTheme }) {
         required
       />
       <div className="form__color-section">
-        <ColorPicker />
-        <div className="form__color-input">
+        {initialData.map((color) => (
+          <ColorPicker  key={color.role} initialValue={color.value} role={color.role} />
+        ))}
+
+        {/* <div className="form__color-input">
           <label htmlFor="color-secondary"></label>
           <input
             type="color"
@@ -60,10 +92,11 @@ export function ThemeForm({ onAddTheme }) {
             <label htmlFor="color-hex"></label>
             <input type="text" id="color-hex" defaultValue="#FF82A9" />
           </div>
-        </div>
-      </div>
-      <div className="form__color-section">
-        <div className="form__color-input">
+        </div> */}
+        {/* </div>
+      <div className="form__color-section"> */}
+
+        {/* <div className="form__color-input">
           <label htmlFor="color-surface"></label>
           <input
             type="color"
@@ -90,7 +123,7 @@ export function ThemeForm({ onAddTheme }) {
             <label htmlFor="color-hex"></label>
             <input type="text" id="color-hex" defaultValue="#231F20" />
           </div>
-        </div>
+        </div> */}
       </div>
       <button className="form__button">Add your Theme</button>
     </form>

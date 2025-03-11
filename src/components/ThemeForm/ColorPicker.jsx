@@ -1,30 +1,23 @@
-import useLocalStorageState from "use-local-storage-state";
+import { useState } from "react";
 
-const initialValue = [
-   { 
-    role: "primary",
-  value: "#7F95D1",
-   }
-];
-
-export function ColorPicker() {
-  const [pickedColor, setPickedColor] = useLocalStorageState("pickedColor", {
-    defaultValue: initialValue,
-  });
-  console.log(pickedColor.primary);
+export function ColorPicker({ inititalValue, role }) {
+  const [value, setValue] = useState(inititalValue);
   return (
     <div className="form__color-input">
-      <label htmlFor="color-primary"></label>
       <input
         type="color"
-        id="color-primary"
-        name="primary"
-        defaultValue={pickedColor.value}
+        name={role}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
       />
       <div className="form__color-input-info">
-        <p>{pickedColor.role}</p>
-        <label htmlFor="color-hex"></label>
-        <input type="text" id="color-hex" defaultValue={pickedColor.value} />
+        <p>{role.charAt(0).toUpperCase() + role.slice(1)}</p>
+        <input
+          type="text"
+          name={role}
+          value={value.toUpperCase()}
+          onChange={(event) => setValue(event.target.value)}
+        />
       </div>
     </div>
   );
