@@ -21,13 +21,11 @@ const initialData = [
   },
 ];
 
-
 export function ThemeForm({ onAddTheme }) {
   // const [initialColorValues, setInitialColorValues] = useLocalStorageState(
   //   "initialColorValues",
   //   { defaultValue: initialValue }
   // );
-  
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -74,9 +72,13 @@ export function ThemeForm({ onAddTheme }) {
         placeholder="Name"
         required
       />
-      <div className="form__color-section">
+      <fieldset className="form__color-section">
         {initialData.map((color) => (
-          <ColorPicker  key={color.role} initialValue={color.value} role={color.role} />
+          <ColorPicker
+            key={color.role}
+            initialValue={color.value}
+            role={color.role}
+          />
         ))}
 
         {/* <div className="form__color-input">
@@ -124,8 +126,10 @@ export function ThemeForm({ onAddTheme }) {
             <input type="text" id="color-hex" defaultValue="#231F20" />
           </div>
         </div> */}
-      </div>
-      <button className="form__button">Add your Theme</button>
+      </fieldset>
+      <button type="submit" className="form__button">
+        Add your Theme
+      </button>
     </form>
   );
 }
