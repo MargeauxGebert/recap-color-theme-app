@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import { ColorPicker } from "./ColorPicker";
 export function ThemeForm({ onAddTheme }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -45,20 +46,7 @@ export function ThemeForm({ onAddTheme }) {
         required
       />
       <div className="form__color-section">
-        <div className="form__color-input">
-          <label htmlFor="color-primary"></label>
-          <input
-            type="color"
-            id="color-primary"
-            name="primary"
-            defaultValue="#7F95D1"
-          />
-          <div className="form__color-input-info">
-            <p>Primary</p>
-            <label htmlFor="color-hex"></label>
-            <input type="text" id="color-hex" defaultValue={"#7F95D1"} />
-          </div>
-        </div>
+        <ColorPicker />
         <div className="form__color-input">
           <label htmlFor="color-secondary"></label>
           <input

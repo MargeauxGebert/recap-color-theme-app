@@ -37,12 +37,13 @@
 
 .form__color-input-info p {
   font-weight: 600;
+  font-size: 14px;
   margin: 0;
 }
 
 .form__color-input-info [type="text"] {
-  width: 70px;
-  font-size: 12px;
+  width: 60px;
+  font-size: 11px;
   margin-top: 3px;
 }
 
