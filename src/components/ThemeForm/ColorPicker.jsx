@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export function ColorPicker({ color, role }) {
+export function ColorPicker({ color, role, resetSignal }) {
   const [value, setValue] = useState(color.value);
+
+  useEffect(() => {
+    setValue(color.value);
+  }, [resetSignal, color.value]);
 
   function handleColorChange(event) {
     setValue(event.target.value);
@@ -12,7 +16,7 @@ export function ColorPicker({ color, role }) {
       <input
         type="color"
         name={role}
-        value={value}
+        defaultValue={value}
         onChange={handleColorChange}
       />
       <div className="form__color-input-info">
@@ -20,7 +24,7 @@ export function ColorPicker({ color, role }) {
         <input
           type="text"
           name={role}
-          value={value.toUpperCase()}
+          defaultValue={value.toUpperCase()}
           onChange={handleColorChange}
         />
       </div>

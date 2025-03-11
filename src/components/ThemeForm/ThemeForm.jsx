@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { ColorPicker } from "./ColorPicker";
+import { useState } from "react";
 
 const initialData = [
   {
@@ -21,6 +22,9 @@ const initialData = [
 ];
 
 export function ThemeForm({ onAddTheme }) {
+
+const [reset, setReset] = useState(false);
+
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -51,6 +55,7 @@ export function ThemeForm({ onAddTheme }) {
     };
     onAddTheme(newTheme);
     event.target.reset();
+    setReset(!reset)
   }
 
   return (
@@ -68,7 +73,7 @@ export function ThemeForm({ onAddTheme }) {
       />
       <fieldset className="form__color-section">
         {initialData.map((color) => (
-          <ColorPicker key={color.role} color={color} role={color.role} />
+          <ColorPicker key={color.role} color={color} role={color.role} resetSignal={reset} />
         ))}
       </fieldset>
       <button type="submit" className="form__button">
