@@ -1,6 +1,5 @@
 import { v4 as uuid } from "uuid";
 import { ColorPicker } from "./ColorPicker";
-// import useLocalStorageState from "use-local-storage-state";
 
 const initialData = [
   {
@@ -22,11 +21,6 @@ const initialData = [
 ];
 
 export function ThemeForm({ onAddTheme }) {
-  // const [initialColorValues, setInitialColorValues] = useLocalStorageState(
-  //   "initialColorValues",
-  //   { defaultValue: initialValue }
-  // );
-
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -74,58 +68,8 @@ export function ThemeForm({ onAddTheme }) {
       />
       <fieldset className="form__color-section">
         {initialData.map((color) => (
-          <ColorPicker
-            key={color.role}
-            initialValue={color.value}
-            role={color.role}
-          />
+          <ColorPicker key={color.role} color={color} role={color.role} />
         ))}
-
-        {/* <div className="form__color-input">
-          <label htmlFor="color-secondary"></label>
-          <input
-            type="color"
-            id="color-secondary"
-            name="secondary"
-            defaultValue="#FF82A9"
-          />
-          <div className="form__color-input-info">
-            <p>Secondary</p>
-            <label htmlFor="color-hex"></label>
-            <input type="text" id="color-hex" defaultValue="#FF82A9" />
-          </div>
-        </div> */}
-        {/* </div>
-      <div className="form__color-section"> */}
-
-        {/* <div className="form__color-input">
-          <label htmlFor="color-surface"></label>
-          <input
-            type="color"
-            id="color-surface"
-            name="surface"
-            defaultValue="#CEF9F2"
-          />
-          <div className="form__color-input-info">
-            <p>Surface</p>
-            <label htmlFor="color-hex"></label>
-            <input type="text" id="color-hex" defaultValue="#CEF9F2" />
-          </div>
-        </div>
-        <div className="form__color-input">
-          <label htmlFor="color-surface-on"></label>
-          <input
-            type="color"
-            id="color-surface-on"
-            name="surface-on"
-            defaultValue="#231F20"
-          />
-          <div className="form__color-input-info">
-            <p>Surface-on</p>
-            <label htmlFor="color-hex"></label>
-            <input type="text" id="color-hex" defaultValue="#231F20" />
-          </div>
-        </div> */}
       </fieldset>
       <button type="submit" className="form__button">
         Add your Theme

@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-export function ColorPicker({ initialValue, role }) {
-  
-  const [value, setValue] = useState(initialValue);
+export function ColorPicker({ color, role }) {
+  const [value, setValue] = useState(color.value);
+
   function handleColorChange(event) {
-    setValue(event.target.value)
+    setValue(event.target.value);
   }
+
   return (
     <div className="form__color-input">
       <input
